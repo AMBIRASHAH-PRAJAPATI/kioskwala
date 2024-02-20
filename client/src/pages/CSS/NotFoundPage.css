@@ -1,0 +1,47 @@
+.NotFound_page_wrapper {
+    width: 100%; 
+    min-height: 100vh;
+    padding-top: 100px;
+    box-sizing: border-box;
+    background-color: var(--bgwhite);
+  }
+  .NotFound_page {
+    max-width: 960px;
+    min-height: 80vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #svg404 {
+    width: 50%;
+    max-height: 350px;
+    height: auto;
+    margin: 0 0 15px;
+  }
+  .NotFound_page h1 {
+    font-size: 48px;
+    margin: 0;
+  }
+  .NotFound_page p {
+    font-size: 16px;
+    width: 35%; 
+    margin: 16px auto 24px;
+    text-align: center;
+  }
+  .NotFound_page button {
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #62AD9B;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 8px 0 #ccc;
+    transition: background 0.3s ease; /* Smooth transition for the background color */
+}
+
+.NotFound_page button:hover {
+    background: #508e7e; /* Change this color to your preferred hover color */
+}

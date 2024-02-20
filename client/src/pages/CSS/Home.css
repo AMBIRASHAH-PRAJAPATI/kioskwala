@@ -1,0 +1,188 @@
+#HeroSection {
+    /* background-image: url(https://images.unsplash.com/photo-1561364202-5248a42a59e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyM3x8a2lvc2t8ZW58MHx8fHwxNzA2MzgwODM0fDA&ixlib=rb-4.0.3&q=80&w=1080); */
+    /* background-image: url(https://images.unsplash.com/photo-1559137771-536eecb999ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxMXx8a2lvc2t8ZW58MHx8fHwxNzA2MzgwODM0fDA&ixlib=rb-4.0.3&q=80&w=1080); */
+    /* background-color: var(--herobg); */
+    background-image: url(/assets/Herosec.webp);
+    /* background-image: var(  --gradient-background-2); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 96px;
+    position: relative;
+    margin: 0;
+    height: auto;
+    object-fit: cover;
+    /* This property is for <img> tags, not needed for background images */
+}
+
+#HeroSectionp {
+    font-size: 1.2em;
+    letter-spacing: .1px;
+}
+
+.herocntbox {
+    max-width: 1400px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 85vh;
+    margin: auto;
+    color: var(--textwhite);
+}
+
+.herocontent {
+    max-width: 46rem;
+    padding: 5px 10px;
+    margin-right: auto;
+    z-index: 10;
+}
+
+.herocontent h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    letter-spacing: -.03em;
+    margin: 0;
+}
+
+.herocontent p {
+    color: var(--textwhitedull);
+    padding-right: 10%;
+}
+
+ .herobtn {
+    background: transparent;
+    background-color: var(--textwhite);
+    color: var(--textnavy);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .5s ease;
+    padding: 20px;
+    margin: 10px 0px;
+    transition: box-shadow .3s;
+}
+
+.herobtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.Heropic {
+    position: absolute;
+    right: 15%;
+    max-width: 600px;
+}
+.Heropic img{
+    width: 120%;
+}
+
+#herotap {
+    background-color: #6a65e5;
+    text-align: center;
+    padding: 15px;
+    color: var(--textwhite);
+}
+
+#herotap p {
+    margin: 0;
+}
+
+
+/* Benifit section  */
+
+.belowhero {
+    padding: 100px 40px;
+    color: var(--textdarknavy);
+}
+
+.benifitxontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.benifitbox {
+    /* background-color: #f9f9f9; */
+    border: 1px solid var(--lightgray);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: box-shadow .3s;
+}
+
+.benifitbox:hover {
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.benifitbox svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.benifitbox:nth-child(2) svg {
+    width: 58px;
+    height: 58px;
+}
+.benifitbox:nth-child(1) svg{
+    width: 65px;
+    height: 65px;
+}
+
+.benifitbox h2 {
+    margin-top: 10px;
+}
+
+.benifitbox p {
+    color: var(--textgray);
+}
+
+#belowwork {
+    text-align: center;
+}
+.charpic {
+    padding-top: 70px;
+}
+.charpic img {
+    width: 65%;
+}
+
+@media only screen and (max-width: 1482px) {
+    .herocontent {
+        max-width: 40rem;
+    }
+    .Heropic {
+        position: absolute;
+        right: 12%;
+        max-width: 400px;
+    }
+    .Heropic img{
+        width: 130%;
+    }
+}
+@media only screen and (max-width: 981px) {
+    .Heropic {
+       display: none;
+    }
+}
+@media only screen and (max-width: 746px) {
+    .belowhero {
+        padding: 80px 30px;
+        text-align: center;
+    }
+    .belowhero h1{
+        font-size: 2em;
+    }
+    .charpic img {
+        width: 100%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .belowhero {
+        padding: 80px 10px;
+    }
+  }
+  

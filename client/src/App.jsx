@@ -1,24 +1,57 @@
+/* eslint-disable react/prop-types */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Service from "./components/Service";
-import Contact from "./components/Contact";
-import Loginsinup from "./components/Loginsinup"
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Services from "./pages/Services";
+import NotFoundPage from "./pages/NotFoundPage";
+import { Logout } from "./pages/Logout";
+import { useAuth } from "./store/auth";
+import AdminLayout from "./components/layouts/Admin-Layout";
+import { AdminUsers } from "./pages/Admin-Users";
+import { AdminBanks } from "./pages/Admin-Banks";
 
-const app = () => {
+
+
+
+
+
+const Layout = ({ children }) => {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Service" element={<Service />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Login" element={<Loginsinup />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar />
+      {children}
     </>
   );
 };
 
-export default app;
+const App = () => {
+  const { isLoggedIn, user } = useAuth(); // Added isAdmin
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        {isLoggedIn ? (
+          <>
+            <Route path="/services" element={<Layout><Services /></Layout>} />
+            {user.isAdmin && ( 
+              <Route path="/admin" element={<AdminLayout />} >
+              <Route index element={<AdminUsers />} />
+              <Route path="users" element={<AdminUsers />} />
+              <Route path="banks" element={<AdminBanks />} />
+              </Route>
+            )}
+          </>
+        ) : null }
+        <Route path="/logout" element={<Logout />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;

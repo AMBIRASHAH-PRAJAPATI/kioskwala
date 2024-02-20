@@ -1,0 +1,122 @@
+#services {
+    padding: 100px 30px;
+    /* background-image: url("/assets/bgdash.webp"); */
+    background: var(--servicebg);
+    background: var(--gradient-background-2);
+    text-align: center;
+}
+
+#banksec {
+    padding: 30px 2% 70px 2%;
+    /* margin-bottom: 100px; */
+}
+
+#bnkheading h1 {
+    padding: 10px 20px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.banksgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    margin-top: 70px;
+}
+
+.bankcard {
+    position: relative;
+    background-color: var(--bankcard);
+    border-radius: 16px;
+    padding: 40px 20px;
+    user-select: none; /* Disable text selection */
+    cursor: default; /* Set cursor to default */
+    overflow: hidden;
+    min-height: 300px;
+    transition: all .5s;
+}
+.bankcard::before {
+    content: "";
+    width: 60px;
+    height: 130px;
+    background-color: var(--orange);
+    position: absolute;
+    left: -10px;
+    top: -40px;
+    transform: rotate(45deg);
+    transition: all .5s;
+}
+.bankcard:hover::before {
+    content: "";
+    filter: brightness(0.8);
+}
+.bankcard:hover {
+    transform: scale(1.05);
+}
+.bankcard:hover .bcard-img img {
+    transform: scale(1.2);
+}
+.bcard-img {
+    height: 110px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:30px;
+}
+.bcard-img img {
+    width: 180px;
+    max-height: 110px;
+    transition: all .5s;
+}
+
+/* CSS */
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin-top: 15px;
+}
+
+/* .button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+} */
+
+.button-24:active {
+  opacity: .5;
+}
+  
+.button-24 svg {
+    margin: 0px 2px;
+    transition: transform 0.3s; /* Transition for moving the SVG icon */
+  }
+  
+  .button-24:hover svg {
+    transform: translateX(5px);
+  }
+  

@@ -1,0 +1,87 @@
+footer {
+    background-color: var(--footerbg);
+    color: var(--textgray);
+}
+.upperfooter, .footertape, #footersocialLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding:10px;
+}
+.upperfooter{padding: 50px 10px;}
+#footersocialLink {
+    cursor: pointer;
+}
+
+#footersocialLink svg {
+    color: var(--footersociallink);
+    transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+#footersocialLink svg:hover {
+    filter: brightness(0.7);
+    scale:1.2;
+}
+
+
+
+#letterbox {
+    background-color: var(--textdarknavy);
+    padding: 10px 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    /* min-width: 400px; */
+}
+#letterbox h3{
+    color: var(--textwhite);
+}
+#letterbox button {
+    float: right;
+    padding: 10px 12px;
+}
+
+
+/* Style for the footer navigation */
+.footernav {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+.footernav a {
+    color: var(--textgray);
+    transition: filter  0.3s ease;
+}
+.footernav a:hover {
+    filter: brightness(0.5);
+}
+.footernav li span {
+    cursor: pointer;
+    transition: filter  0.3s ease;
+}
+.footernav li span:hover {
+    filter: brightness(0.5);
+}
+.menu-list ul,
+.help-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+.menu-list li,
+.help-list li {
+    margin-bottom: 15px;
+}
+.menu-list h3,
+.help-list h3 {
+    color: var(--textdarknavy);
+}
+.footertape{
+    border-top: 2px solid var(--lightgray);
+}
+@media only screen and (max-width: 746px) {
+    .footertape{
+        padding: 10px 20px;
+    }
+  }

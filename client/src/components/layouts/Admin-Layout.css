@@ -1,0 +1,138 @@
+#Admin-Panel {
+  display: grid;
+  grid-template-columns: 250px auto;
+  height: 100vh;
+}
+
+.admin-sidebar {
+  background-color: var(--herobg);
+  color: var(--textwhite);
+  padding-top: 20px;
+}
+
+.admin-header #mainlogo {
+  margin: 20px;
+
+}
+
+.admin-header nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-header nav ul li {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-header nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-header nav ul li:last-child {
+  border-bottom: none;
+}
+
+.admin-header nav ul li a {
+  color: var(--textwhite);
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+/* admin dashboard hero */
+
+.dashboard-hero {
+  /* background-color: #034c67; */
+  background-color: #1a4157;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--textwhite);
+}
+
+.dashboard-hero h1 {
+  margin: 0;
+}
+
+.dashboard-hero span {
+  font-size: 14px;
+  color: #a4a2a2;
+}
+
+.dashboard-content section {
+  background-color: #f0f0f0;
+}
+
+/* admin  table styles */
+
+.admin-main-pd {
+  padding: 0px 20px;
+}
+
+.adminmainscroll {
+  height: 81vh;
+  padding-bottom: 50px;
+  overflow-y: auto; /* Use 'auto' to only show scrollbar when needed */
+}
+/* .adminmainscroll::-webkit-scrollbar {
+  display: none !important;
+} */
+
+
+/* Table */
+.admin-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  padding: 10px;
+}
+
+.admin-data-table thead, .admin-data-table tbody td:first-child  {
+  background-color: var(--tablseclr);
+}
+
+.admin-data-table th,
+.admin-data-table td {
+  padding: 12px;
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+
+.admin-data-table th:nth-last-child(-n+2),
+.admin-data-table td:nth-last-child(-n+2) {
+  text-align: center;
+}
+
+.admin-data-table td:first-child {
+  font-weight: bold;
+}
+
+/* Btn in Admin pannel */
+.admin-edit-btn,
+.admin-dlt-btn {
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: var(--editbtn);
+  color: white;
+  font-size: 14px;
+}
+
+.admin-edit-btn:hover {
+  background-color: var(--editbtnhover);
+}
+
+.admin-dlt-btn {
+  background-color: var(--dltbtn);
+}
+
+.admin-dlt-btn:hover {
+  background-color: var(--dltbtnhover);
+}
