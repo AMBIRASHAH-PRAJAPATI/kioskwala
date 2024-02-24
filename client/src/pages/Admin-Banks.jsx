@@ -11,7 +11,6 @@ import { FaXmark } from "react-icons/fa6";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
 
-const URL = "http://localhost:5000/api/admin/banks/add";
 
 export const AdminBanks = () => {
   const [banks, setBanks] = useState({ govtBanks: [], pvtBanks: [] });
@@ -20,7 +19,7 @@ export const AdminBanks = () => {
   const [showEditPopup, setShowEditPopup] = useState(false);
   const [showAddPopup, setShowAddPopup] = useState(false);
   const [selectedBank, setSelectedBank] = useState(null);
-  const { AuthorizationToken } = useAuth();
+  const { AuthorizationToken, API } = useAuth();
 
   //close pop ups
   const closePopUp = () => {
@@ -31,7 +30,7 @@ export const AdminBanks = () => {
 
   const getAllBanksData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/banks", {
+      const response = await fetch(`${API}/api/admin/banks`, {
         method: "GET",
         headers: {
           Authorization: AuthorizationToken,
@@ -49,7 +48,7 @@ export const AdminBanks = () => {
 //  adding bank to database
   const addBankToDatabase = async (BankData) => {
     try {
-      const response = await fetch(URL, {
+      const response = await fetch(`${API}/api/admin/banks/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +78,7 @@ export const AdminBanks = () => {
   const editbank = async (BankData) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/banks/update/${selectedBank._id}`,
+        `${API}/api/admin/banks/update/${selectedBank._id}`,
         {
           method: "PATCH",
           headers: {
@@ -143,7 +142,7 @@ export const AdminBanks = () => {
   const deleteBank = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/banks/delete/${id}`,
+        `${API}/api/admin/banks/delete/${id}`,
         {
           method: "DELETE",
           headers: {

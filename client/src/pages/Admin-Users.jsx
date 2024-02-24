@@ -9,7 +9,6 @@ import Loader from "../components/Loader";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 
-const URL = "http://localhost:5000/api/admin/users/add";
 
 export const AdminUsers = () => {
   const [users, setUsers] = useState([]); // Initialize users as an empty array
@@ -18,7 +17,7 @@ export const AdminUsers = () => {
   const [showEditPopup, setShowEditPopup] = useState(false);
   const [showAddPopup, setShowAddPopup] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null); // State to store the selected user
-  const { AuthorizationToken } = useAuth();
+  const { AuthorizationToken, API } = useAuth();
 
   //close pop ups
   const closePopUp = () => {
@@ -30,7 +29,7 @@ export const AdminUsers = () => {
   // get all user data
   const getAllUserData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/users", {
+      const response = await fetch(`${API}/api/admin/users`, {
         method: "GET",
         headers: {
           Authorization: AuthorizationToken,
@@ -49,7 +48,7 @@ export const AdminUsers = () => {
   // add user
   const addUserToDatabase = async (userData) => {
     try {
-      const response = await fetch(URL, {
+      const response = await fetch(`${API}/api/admin/users/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +77,7 @@ export const AdminUsers = () => {
   const edituser = async (userData) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/update/${selectedUser._id}`,
+        `${API}/api/admin/users/update/${selectedUser._id}`,
         {
           method: "PATCH",
           headers: {
@@ -143,7 +142,7 @@ export const AdminUsers = () => {
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/delete/${id}`,
+        `${API}/api/admin/users/delete/${id}`,
         {
           method: "DELETE",
           headers: {

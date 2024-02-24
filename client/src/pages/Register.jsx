@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
-const URL = "http://localhost:5000/api/auth/register";
 
 export default function Register() {
   const [user, setUser] = useState({
@@ -16,7 +15,7 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const { storeTokenInLS } = useAuth(); // geting funtion to store in local storage
+  const { storeTokenInLS, API } = useAuth(); // geting funtion to store in local storage
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -31,7 +30,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(URL, {
+      const response = await fetch(`${API}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -4,12 +4,15 @@ import { useState } from "react";
 
 export const AuthContext = createContext();
 
+
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState("");
-  const [isLoading,  setIsLoading] = useState(true);
-  const [allBanks, setBanks] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [allBanks, setBanks] = useState([]);
   const AuthorizationToken = `Bearer ${token}`;
+
+  const API = import.meta.env.VITE_APP_BASE_API;
 
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
@@ -26,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
   const userAuthentication = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/user", {
+      const response = await fetch(`${API}/api/auth/user`, {
         method: "GET",
         headers: {
           Authorization: AuthorizationToken,
@@ -40,7 +43,7 @@ export const AuthProvider = ({ children }) => {
         setIsLoading(false);
       }
     } catch (error) {
-      console.log("Error fetching user data");
+      console.log(`Error fetching user data: ${error}`);
     }
   };
 
@@ -48,19 +51,13 @@ export const AuthProvider = ({ children }) => {
   const getAllBanks = async () => {
     try {
       setIsLoading(false);
-      const govtBanksResponse = await fetch(
-        "http://localhost:5000/api/data/govtbanks",
-        {
-          method: "GET",
-        }
-      );
+      const govtBanksResponse = await fetch(`${API}/api/data/govtbanks`, {
+        method: "GET",
+      });
 
-      const pvtBanksResponse = await fetch(
-        "http://localhost:5000/api/data/pvtbanks",
-        {
-          method: "GET",
-        }
-      );
+      const pvtBanksResponse = await fetch(`${API}/api/data/pvtbanks`, {
+        method: "GET",
+      });
 
       if (govtBanksResponse.ok && pvtBanksResponse.ok) {
         const govtBanksData = await govtBanksResponse.json();
@@ -91,6 +88,7 @@ export const AuthProvider = ({ children }) => {
         allBanks,
         AuthorizationToken,
         isLoading,
+        API,
       }}
     >
       {children}
