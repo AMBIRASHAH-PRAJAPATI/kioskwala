@@ -54,7 +54,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <div id="mainlogo">
+      <div className="mainlogo">
         <NavLink to="/">
           <img src="/assets/Kioskwalalogo.png" alt="Kioskwala" />
         </NavLink>

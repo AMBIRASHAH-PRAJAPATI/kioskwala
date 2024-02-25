@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./CSS/Admin-UpdateUser.css";
 import Swal from "sweetalert2";
 
 const UserAddForm = ({ adduser }) => {

@@ -1,4 +1,4 @@
-#mainlogo img{
+.mainlogo img{
     width:200px;
     height: 70px;
     background-color: var(--textwhite);
@@ -126,6 +126,10 @@
   @media screen and (max-width:1040px) {
     .navbar {
       width: 100%;
+    }
+    .mainlogo img{
+      width:150px;
+      height: 50px;
     }
   }
   @media screen and (max-width:704px) {
