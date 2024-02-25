@@ -30,7 +30,7 @@ app.use("/api/admin", adminRoute);
 // for error handling express
 app.use(errorMiddleware);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 connectDB().then(() => {
     app.listen(PORT, () => {
         console.log(`server is running at port: ${PORT}`);

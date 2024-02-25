@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "nodemon server/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "https://kioskwala.vercel.app",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
