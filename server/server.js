@@ -11,7 +11,7 @@ const errorMiddleware = require("./middleware/error-middleware");
 
 // cors
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "https://kioskwala.vercel.app",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true, // Corrected property name
 };
